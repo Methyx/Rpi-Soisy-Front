@@ -1,10 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Components
+import Home from "./Home/page/Home";
+
+// style
 import "./App.css";
 
 function App() {
   return (
-    <div>
-      <h1>Bienvenue chez Methyx</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 
