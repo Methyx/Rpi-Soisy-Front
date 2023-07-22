@@ -4,6 +4,7 @@
   background-image: url(../../assets/computer.jpg);
   background-position: center;
   background-size: contain;
+  background-repeat: no-repeat;
   color: azure;
 }
 
