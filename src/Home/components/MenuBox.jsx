@@ -1,0 +1,53 @@
+import { useState } from "react";
+
+// style
+import "../style/menu-box.css";
+
+const MenuBox = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  return (
+    <div className="menu-box">
+      <div
+        className="nav-button"
+        onClick={() => {
+          setIsMenuOpen(!isMenuOpen);
+        }}
+      >
+        <span
+          className={isMenuOpen ? "nav-icon open" : "nav-icon close"}
+        ></span>
+      </div>
+      <nav className={isMenuOpen ? "navigation open" : "navigation close"}>
+        <ul className="nav-list">
+          <li>
+            <a href="#" className="nav-link">
+              Accueil
+            </a>
+          </li>
+          <li>
+            <a href="#" className="nav-link">
+              Nos produits
+            </a>
+          </li>
+          <li>
+            <a href="#" className="nav-link">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="#" className="nav-link">
+              À propos
+            </a>
+          </li>
+          <li>
+            <a href="#" className="nav-link">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+};
+
+export default MenuBox;

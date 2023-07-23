@@ -14,3 +14,8 @@
   font-size: clamp(14px, 2vw, 22px);
   text-align: center;
 }
+
+.home-page .menu {
+  width: 60%;
+  height: 80%;
+}
