@@ -10,8 +10,8 @@
 }
 
 .home-page h1 {
-  line-height: 60px;
-  font-size: clamp(14px, 2vw, 22px);
+  line-height: 80px;
+  font-size: clamp(20px, 3vw, 35px);
   text-align: center;
 }
 

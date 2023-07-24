@@ -92,3 +92,19 @@
   text-decoration: none;
   text-transform: uppercase;
 }
+
+@media screen and (max-width: 800px) {
+  .menu-box .nav-button {
+    width: 70px;
+    height: 70px;
+  }
+  .menu-box .nav-button .nav-icon,
+  .menu-box .nav-button .nav-icon::before,
+  .menu-box .nav-button .nav-icon::after {
+    width: 35px;
+  }
+  .navigation {
+    width: calc(100% - 80px);
+    margin-left: 80px;
+  }
+}
