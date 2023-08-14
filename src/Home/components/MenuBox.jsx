@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // style
 import "../style/menu-box.css";
@@ -25,9 +26,9 @@ const MenuBox = () => {
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link">
-              Nos produits
-            </a>
+            <Link className="nav-link" to="/solitaire">
+              Jeu de Cartes Solitaire
+            </Link>
           </li>
           <li>
             <a href="#" className="nav-link">
