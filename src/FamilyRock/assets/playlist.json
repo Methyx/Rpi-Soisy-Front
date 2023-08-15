@@ -1,0 +1,87 @@
+[
+  {
+    "title": "The Loneliest",
+    "author": "Maneskin",
+    "link": "/assets/rock/audio/The_Loneliest - Family.mp3",
+    "image": "/assets/rock/img/Maneskin_logo.png",
+    "featuring": [
+      "Chant Lead : Lucie",
+      "Choeurs : Céline",
+      "Basse : Céline",
+      "Batterie : Phil"
+    ]
+  },
+  {
+    "title": "Final Masquerade",
+    "author": "Linkin Park",
+    "link": "/assets/rock/audio/Final Masquerade v6.mp3",
+    "image": "/assets/rock/img/Logo_linkin_park.png",
+    "featuring": [
+      "Chant Lead : Lucie",
+      "Choeurs : Lucie",
+      "Basse : Céline",
+      "Batterie : Phil"
+    ]
+  },
+  {
+    "title": "Just Tonight",
+    "author": "The Pretty Reckless",
+    "link": "/assets/rock/audio/Just Tonight - v3.mp3",
+    "image": "/assets/rock/img/The_Pretty_Reckless.png",
+    "featuring": [
+      "Chant Lead : Lucie",
+      "Choeurs : Céline",
+      "Basse : Céline",
+      "Batterie : Phil"
+    ]
+  },
+  {
+    "title": "Love Hurts",
+    "author": "Incubus",
+    "link": "/assets/rock/audio/Love Hurts - Family v4.mp3",
+    "image": "/assets/rock/img/Incubus_Logo.png",
+    "featuring": [
+      "Chant Lead : Céline",
+      "Choeurs : Lucie",
+      "Basse : Céline",
+      "Batterie : Phil"
+    ]
+  },
+  {
+    "title": "What I've Done",
+    "author": "Linkin Park",
+    "link": "/assets/rock/audio/What i ve done - Family.mp3",
+    "image": "/assets/rock/img/Logo_linkin_park.png",
+    "featuring": [
+      "Piano : Adelin",
+      "Chant Lead : Lucie",
+      "Choeurs : Lucie",
+      "Basse : Céline",
+      "Batterie : Phil"
+    ]
+  },
+  {
+    "title": "Your Song",
+    "author": "Elton John",
+    "link": "/assets/rock/audio/Your Song - V4.mp3",
+    "image": "/assets/rock/img/Elton_John_Logo.svg",
+    "featuring": [
+      "Piano : Vincent",
+      "Chant Lead : Lucie",
+      "Basse : Céline",
+      "Batterie : Phil"
+    ]
+  },
+  {
+    "title": "Do Ya Feel My Love",
+    "author": "Stereophonics",
+    "link": "/assets/rock/audio/Do Ya Feel My Love - V3.mp3",
+    "image": "/assets/rock/img/Stereophonics-logo.png",
+    "featuring": [
+      "Chant Lead : Lucie",
+      "Choeurs : Céline",
+      "Basse : Céline",
+      "Batterie : Phil"
+    ]
+  }
+]

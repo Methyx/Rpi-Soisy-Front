@@ -31,19 +31,9 @@ const MenuBox = () => {
             </Link>
           </li>
           <li>
-            <a href="#" className="nav-link">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link">
-              À propos
-            </a>
-          </li>
-          <li>
-            <a href="#" className="nav-link">
-              Contact
-            </a>
+            <Link className="nav-link" to="/familyrock">
+              Rock en famille
+            </Link>
           </li>
         </ul>
       </nav>

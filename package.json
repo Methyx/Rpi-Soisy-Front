@@ -13,6 +13,7 @@
     "@dnd-kit/core": "^6.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-h5-audio-player": "^3.8.6",
     "react-router-dom": "^6.14.2"
   },
   "devDependencies": {

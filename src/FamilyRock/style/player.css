@@ -1,0 +1,51 @@
+.player {
+  width: 60%;
+  margin: 20px auto;
+}
+.player .player-head {
+  background-image: url(../img/metal-texture.gif);
+  height: clamp(60px, 12vmin, 100px);
+  border: 2px solid rgb(109, 42, 42);
+  border-radius: 10px;
+}
+.player .player-head.onplay p,
+.player .player-head.onplay .title-title {
+  color: brown;
+  text-shadow: 2px 2px 10px red, 5px 5px 15px white;
+  animation: text-blink 1s infinite ease-in-out alternate-reverse;
+}
+@keyframes text-blink {
+  0%,
+  30% {
+    color: brown;
+    text-shadow: 2px 2px 10px red, 5px 5px 15px white;
+  }
+  50%,
+  55% {
+    color: black;
+    text-shadow: none;
+  }
+  60%,
+  100% {
+    color: brown;
+    text-shadow: 2px 2px 10px red, 5px 5px 15px white;
+  }
+}
+.player .audio-player {
+  background-color: rgba(0, 255, 255, 0.5);
+  background-image: url(../img/brushed-alum.png);
+  border: 2px solid rgb(109, 42, 42);
+  border-radius: 5px;
+}
+.player .rhap_container {
+  background-color: transparent;
+}
+
+@media screen and (max-width: 800px) {
+  .player {
+    width: 80%;
+  }
+  .player .player-head {
+    height: 80px;
+  }
+}

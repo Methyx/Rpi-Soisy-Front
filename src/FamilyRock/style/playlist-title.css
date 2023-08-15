@@ -1,0 +1,108 @@
+.title-item {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+  position: relative;
+}
+
+.title-item .boulon {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  object-fit: contain;
+  position: absolute;
+  box-shadow: 0px 0px 5px black;
+}
+.title-item .boulon.number1 {
+  top: 5px;
+  left: 5px;
+}
+.title-item .boulon.number2 {
+  top: 5px;
+  right: 5px;
+}
+.title-item .boulon.number3 {
+  bottom: 5px;
+  left: 5px;
+}
+.title-item .boulon.number4 {
+  bottom: 5px;
+  right: 5px;
+}
+.title-item .title-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.title-item .title-content .title-logo img {
+  height: 80%;
+  max-width: 80%;
+  object-fit: contain;
+}
+.title-item .title-content div {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  font-size: max(1.1vw, 10px);
+  text-shadow: 1px 1px 5px white;
+}
+
+.title-item .title-content .title-logo {
+  width: 20%;
+}
+.title-item .title-content .title-authors {
+  padding: 0 3%;
+  width: 35%;
+  overflow: hidden;
+  line-height: max(1.5vw, 12px);
+  position: relative;
+}
+.title-item .title-content .title-authors-content {
+  position: absolute;
+  height: 100%;
+  top: 20%;
+}
+.title-item .title-content .title-authors-content.front {
+  top: 0;
+  animation: text-scroll 5s infinite alternate linear;
+}
+@keyframes text-scroll {
+  from {
+    top: 3vw;
+  }
+  to {
+    top: -8vw;
+  }
+}
+.title-item .title-content .title-authors-content p:nth-child(1) {
+  margin: 5% 0;
+  font-style: italic;
+  text-decoration: underline black;
+}
+.title-item .title-content .title-authors-content :not(p:nth-child(1)) {
+  font-size: max(1vw, 8px);
+}
+.title-item .title-content .title-title {
+  width: 40%;
+  justify-content: center;
+  font-weight: bold;
+}
+.title-item .title-content .led {
+  width: 8px;
+  height: 8px;
+  margin-top: calc(clamp(60px, 12vmin, 100px) / 2 - 5px);
+}
+.title-item .title-content .led.off {
+  border-radius: 50%;
+  border: 1px solid rgb(131, 128, 128);
+  background-color: rgb(225, 223, 220);
+}
+.title-item .title-content .led.on {
+  border-radius: 50%;
+  border: 1px solid rgb(131, 128, 128);
+  background-color: red;
+  box-shadow: 0px 0px 15px 5px red;
+}
