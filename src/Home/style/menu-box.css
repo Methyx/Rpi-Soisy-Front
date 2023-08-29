@@ -92,6 +92,9 @@
   text-decoration: none;
   text-transform: uppercase;
 }
+.nav-link:hover {
+  font-weight: 600;
+}
 
 @media screen and (max-width: 800px) {
   .menu-box .nav-button {

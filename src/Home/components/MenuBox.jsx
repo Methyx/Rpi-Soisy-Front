@@ -21,11 +21,6 @@ const MenuBox = () => {
       <nav className={isMenuOpen ? "navigation open" : "navigation close"}>
         <ul className="nav-list">
           <li>
-            <a href="#" className="nav-link">
-              Accueil
-            </a>
-          </li>
-          <li>
             <Link className="nav-link" to="/solitaire">
               Jeu de Cartes Solitaire
             </Link>
