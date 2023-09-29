@@ -30,6 +30,11 @@ const MenuBox = () => {
               Rock en famille
             </Link>
           </li>
+          <li>
+            <Link className="nav-link" to="/meteo">
+              Meteo 48h
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>

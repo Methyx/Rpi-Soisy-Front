@@ -1,0 +1,9 @@
+.graph-container .legende {
+  height: 36px;
+  font-size: 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+}

@@ -1,0 +1,31 @@
+.meteo-graphs {
+  width: 100%;
+}
+
+.meteo-graphs .wait {
+  margin: 25px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.meteo-graphs-content {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+}
+
+.meteo-graphs-content section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+@media screen and (max-width: 750px) {
+  .meteo-graphs-content {
+    height: 1000px;
+  }
+  .meteo-graphs-content section {
+    flex-direction: column;
+  }
+}
