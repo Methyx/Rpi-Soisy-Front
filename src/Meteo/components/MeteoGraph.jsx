@@ -77,7 +77,7 @@ const MeteoGraph = ({
           }}
           unit={unit}
           tick={{ fontSize: "12px" }}
-          domain={[0, (dataMax) => Math.ceil(dataMax)]}
+          domain={[0, (dataMax) => Math.max(1, Math.ceil(dataMax))]}
         />
         <Legend
           verticalAlign="top"

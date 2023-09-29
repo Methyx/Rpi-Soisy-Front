@@ -4,7 +4,7 @@ import { useState } from "react";
 import InputAddress from "../components/InputAddress";
 import MeteoGraphs from "../components/MeteoGraphs";
 
-// Paris
+// Paris to init
 const paris = {
   type: "Feature",
   geometry: {
