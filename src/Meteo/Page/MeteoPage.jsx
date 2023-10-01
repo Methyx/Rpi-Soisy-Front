@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // components
 import InputAddress from "../components/InputAddress";
 import MeteoGraphs from "../components/MeteoGraphs";
+import HamsterLoader from "../components/HamsterLoader";
+
+// functions
+import getGeoLocation from "../functions/getGeoLocation";
+import getAddressByCoordinates from "../functions/getAddressByCoordinates";
 
 // Paris to init
 const paris = {
@@ -34,24 +39,68 @@ import "../style/meteo-page.css";
 
 const MeteoPage = () => {
   const [location, setLocation] = useState(paris);
+  const [isLocated, setIsLocated] = useState(null);
+  const [geoPosition, setGeoPosition] = useState([]);
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    getGeoLocation(setIsLocated, setGeoPosition);
+  }, []);
+
+  useEffect(() => {
+    const initLocation = async () => {
+      const geoLocation = await getAddressByCoordinates(
+        geoPosition.lat,
+        geoPosition.lng
+      );
+      if (geoLocation) {
+        setLocation(geoLocation);
+        setIsReady(true);
+      }
+    };
+    if (geoPosition?.lat && geoPosition?.lng) {
+      initLocation();
+    }
+  }, [geoPosition]);
+
+  useEffect(() => {
+    if (isLocated === false) {
+      setIsReady(true);
+    }
+  }, [isLocated]);
+
   return (
     <div className="meteo-page">
       <h1>La météo de précision de Météo France</h1>
-      <div className="location">
-        <InputAddress
-          initValue={location?.properties?.label}
-          setLocation={setLocation}
-          validation={false}
-        />
-      </div>
-      <div className="meteo">
-        <MeteoGraphs
-          position={[
-            location?.geometry?.coordinates[1],
-            location?.geometry?.coordinates[0],
-          ]}
-        />
-      </div>
+      {isLocated === null ? (
+        <div className="wait">
+          <p>Recherche de votre position ... </p>
+          <HamsterLoader />
+        </div>
+      ) : (
+        <div className="meteo-page-content">
+          {isReady && (
+            <>
+              <div className="location">
+                <InputAddress
+                  initValue={location?.properties?.label}
+                  setLocation={setLocation}
+                  validation={false}
+                />
+              </div>
+              <h2>Autour de {location?.properties?.label}</h2>
+              <div className="meteo">
+                <MeteoGraphs
+                  position={[
+                    location?.geometry?.coordinates[1],
+                    location?.geometry?.coordinates[0],
+                  ]}
+                />
+              </div>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 };

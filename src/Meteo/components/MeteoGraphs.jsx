@@ -52,11 +52,11 @@ const MeteoGraphs = ({ position }) => {
               meteoData={meteoData}
               syncId={"meteo"}
               dataXKey={"forecast"}
-              dataYKey={"2_metre_relative_humidity"}
-              unit={"%"}
-              titleIcon={<WaterIcon />}
-              title={"Humidité"}
-              color={"#80ced6"}
+              dataYKey={"precipitation"}
+              unit={" mm"}
+              titleIcon={<UmbrellaIcon />}
+              title={"Précipitations"}
+              color={"#36486b"}
             />
           </section>
 
@@ -75,11 +75,11 @@ const MeteoGraphs = ({ position }) => {
               meteoData={meteoData}
               syncId={"meteo"}
               dataXKey={"forecast"}
-              dataYKey={"precipitation"}
-              unit={" mm"}
-              titleIcon={<UmbrellaIcon />}
-              title={"Précipitations"}
-              color={"#36486b"}
+              dataYKey={"2_metre_relative_humidity"}
+              unit={"%"}
+              titleIcon={<WaterIcon />}
+              title={"Humidité"}
+              color={"#80ced6"}
             />
           </section>
         </div>
