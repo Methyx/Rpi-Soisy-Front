@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 const getAddressByCoordinates = async (lat, lng) => {
   try {
-    let url = "https://api-adresse.data.gouv.fr/reverse/?lon=2.37&lat=48.357";
+    let url = "https://api-adresse.data.gouv.fr/reverse/";
     url += "?lon=" + lng;
     url += "&lat=" + lat;
     const response = await axios.get(url);

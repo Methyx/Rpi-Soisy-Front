@@ -33,6 +33,10 @@ const getGeoLocation = async (setIsLocated, setGeoPosition) => {
       setIsLocated(false);
       setGeoPosition(geoParis);
     }
+  } else {
+    toast.warning("Localisation impossible");
+    setIsLocated(false);
+    setGeoPosition(geoParis);
   }
 };
 
