@@ -6,8 +6,8 @@ import "leaflet/dist/leaflet.css";
 // style
 import "../style/map.css";
 
-import meteoIcon from "../img/marker-icon-purple.png";
 import centerIcon from "../img/marker-icon-blue.png";
+import meteoIcon from "../img/marker-icon-purple.png";
 
 const Map = ({ mapCenter, meteoPoint }) => {
   return (
