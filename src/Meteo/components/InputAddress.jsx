@@ -42,6 +42,7 @@ const InputAddress = ({ initValue = "", setLocation, validation = true }) => {
   const [inputToSearch, setInputToSearch] = useState(initValue);
   const [suggestions, setSuggestions] = useState([]);
   const [inputSelected, setInputSelected] = useState(null);
+  const possibleLocation = useRef(null);
 
   // functions
   const debounceInput = useRef(
@@ -64,12 +65,14 @@ const InputAddress = ({ initValue = "", setLocation, validation = true }) => {
         url += "&limit=20";
         const response = await axios.get(url);
         const data = [];
+        possibleLocation.current = [];
         for (let i = 0; i < response.data?.features.length; i++) {
+          possibleLocation.current.push(response.data.features[i]);
           if (i === 0) {
             setInputSelected(response.data.features[0]);
-            if (!validation) {
-              setLocation(response.data.features[0]);
-            }
+            // if (!validation) {
+            //   setLocation(response.data.features[0]);
+            // }
           }
           data.push(response.data.features[i].properties.label);
         }
@@ -114,6 +117,12 @@ const InputAddress = ({ initValue = "", setLocation, validation = true }) => {
           value={input}
           onInputChange={(event, newValue) => {
             handleInput(newValue);
+          }}
+          onChange={(event) => {
+            if (!validation) {
+              const itemIndex = suggestions.indexOf(event.target.innerText);
+              setLocation(possibleLocation.current[itemIndex]);
+            }
           }}
           options={suggestions || null}
           renderInput={(params) => {
