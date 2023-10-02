@@ -7,6 +7,7 @@ import "leaflet/dist/leaflet.css";
 import "../style/map.css";
 
 import meteoIcon from "../img/marker-icon-purple.png";
+import centerIcon from "../img/marker-icon-blue.png";
 
 const Map = ({ mapCenter, meteoPoint }) => {
   return (
@@ -23,7 +24,16 @@ const Map = ({ mapCenter, meteoPoint }) => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
 
-      <Marker position={mapCenter}>
+      <Marker
+        position={mapCenter}
+        icon={
+          new Icon({
+            iconUrl: centerIcon,
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+          })
+        }
+      >
         <Popup>Votre Position</Popup>
       </Marker>
       <Marker
