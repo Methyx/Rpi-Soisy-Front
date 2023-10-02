@@ -19,6 +19,7 @@ import "../style/meteo-graphs.css";
 const MeteoGraphs = ({ position }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [meteoData, setMeteoData] = useState([]);
+
   useEffect(() => {
     const init = async () => {
       setIsLoading(true);

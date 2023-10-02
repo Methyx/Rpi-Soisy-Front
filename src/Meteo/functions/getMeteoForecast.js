@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const getMeteoForecast = async (
-  position = [48.8630178, 2.323974],
+  meteoPointPosition, //  [lat, lng]  ex.: [49, 2.3]
   nbPoints = 48
 ) => {
-  // return the forecast from the nearest meteo point as an array of nbPoints objects :
+  // return the forecast from the meteo point as an array of nbPoints objects :
   //   [
   //     {
   //       position: [49, 2.3],
@@ -18,33 +18,20 @@ const getMeteoForecast = async (
   //      {...},
   //   ];
   //
-  // find the nearest point in Meteo data
   try {
-    const urlSource =
-      "https://public.opendatasoft.com/api/records/1.0/search/?dataset=arome-0025-sp1_sp2";
-    let url = urlSource + "&rows=1"; // only 1 result to find the nearest
-    url += "&sort=-dist"; // filter by distance
-    url +=
-      "&geofilter.distance=" +
-      position[0].toString() +
-      "," +
-      position[1].toString() +
-      ",5000"; // 5000 meters around
-    const response = await axios.get(url);
-    let nearestPosition = null;
-    if (response.data.nhits > 0) {
-      nearestPosition = response.data.records[0].fields.position;
-    } else {
+    if (!meteoPointPosition || meteoPointPosition.length !== 2) {
       return null;
     }
     // ask for the forecasts
+    const urlSource =
+      "https://public.opendatasoft.com/api/records/1.0/search/?dataset=arome-0025-sp1_sp2";
     let url2 = urlSource + "&rows=" + nbPoints.toString();
     url2 += "&sort=-forecast"; // sort by forcast ascending
     url2 +=
       "&geofilter.distance=" +
-      nearestPosition[0].toString() +
+      meteoPointPosition[0].toString() +
       "," +
-      nearestPosition[1].toString();
+      meteoPointPosition[1].toString();
     const response2 = await axios.get(url2);
     const results = [];
     if (response2.data.records) {

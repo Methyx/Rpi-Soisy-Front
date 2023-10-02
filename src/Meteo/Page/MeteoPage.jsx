@@ -8,6 +8,7 @@ import HamsterLoader from "../components/HamsterLoader";
 // functions
 import getGeoLocation from "../functions/getGeoLocation";
 import getAddressByCoordinates from "../functions/getAddressByCoordinates";
+import getNearestMeteoPoint from "../functions/getNearestMeteoPoint";
 
 // Paris to init
 const paris = {
@@ -41,6 +42,8 @@ const MeteoPage = () => {
   const [location, setLocation] = useState(null);
   const [isLocated, setIsLocated] = useState(null);
   const [geoPosition, setGeoPosition] = useState([]);
+  const [meteoPointPosition, setMeteoPointPosition] = useState(null);
+  const [meteoPointAddress, setMeteoPointAddress] = useState("");
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -66,6 +69,24 @@ const MeteoPage = () => {
     }
   }, [isLocated]);
 
+  useEffect(() => {
+    const getMeteoPoint = async () => {
+      const meteoPoint = await getNearestMeteoPoint([
+        location.geometry.coordinates[1],
+        location.geometry.coordinates[0],
+      ]);
+      setMeteoPointPosition(meteoPoint);
+      const address = await getAddressByCoordinates(
+        meteoPoint[0],
+        meteoPoint[1]
+      );
+      setMeteoPointAddress(address.properties.label);
+    };
+    if (location) {
+      getMeteoPoint();
+    }
+  }, [location]);
+
   return (
     <div className="meteo-page">
       <h1>La météo de précision de Météo France</h1>
@@ -85,14 +106,10 @@ const MeteoPage = () => {
                   validation={false}
                 />
               </div>
-              <h2>Autour de {location?.properties?.label}</h2>
+              <h2>Point météo le plus proche : {meteoPointAddress}</h2>
+
               <div className="meteo">
-                <MeteoGraphs
-                  position={[
-                    location?.geometry?.coordinates[1],
-                    location?.geometry?.coordinates[0],
-                  ]}
-                />
+                <MeteoGraphs position={meteoPointPosition} />
               </div>
             </>
           )}
