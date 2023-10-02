@@ -74,6 +74,9 @@ const InputAddress = ({ initValue = "", setLocation, validation = true }) => {
           data.push(response.data.features[i].properties.label);
         }
         setSuggestions(data);
+        if (data.length === 1) {
+          setInput(data[0]);
+        }
         // if (data.length <= 2) {
         //   setInputSelected(response.data.features[0]);
         //   if (!validation) {

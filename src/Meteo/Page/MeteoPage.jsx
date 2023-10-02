@@ -38,7 +38,7 @@ const paris = {
 import "../style/meteo-page.css";
 
 const MeteoPage = () => {
-  const [location, setLocation] = useState(paris);
+  const [location, setLocation] = useState(null);
   const [isLocated, setIsLocated] = useState(null);
   const [geoPosition, setGeoPosition] = useState([]);
   const [isReady, setIsReady] = useState(false);
@@ -58,14 +58,11 @@ const MeteoPage = () => {
         setIsReady(true);
       }
     };
-    if (geoPosition?.lat && geoPosition?.lng) {
-      initLocation();
-    }
-  }, [geoPosition]);
-
-  useEffect(() => {
     if (isLocated === false) {
+      setLocation(paris);
       setIsReady(true);
+    } else if (isLocated) {
+      initLocation();
     }
   }, [isLocated]);
 
