@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
+import { Button } from "@mui/material";
+
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
 // components
 import InputAddress from "../components/InputAddress";
 import MeteoGraphs from "../components/MeteoGraphs";
 import HamsterLoader from "../components/HamsterLoader";
+import Map from "../components/Map";
 
 // functions
 import getGeoLocation from "../functions/getGeoLocation";
@@ -45,6 +50,7 @@ const MeteoPage = () => {
   const [meteoPointPosition, setMeteoPointPosition] = useState(null);
   const [meteoPointAddress, setMeteoPointAddress] = useState("");
   const [isReady, setIsReady] = useState(false);
+  const [isMapVisible, setIsMapVisible] = useState(false);
 
   useEffect(() => {
     getGeoLocation(setIsLocated, setGeoPosition);
@@ -67,7 +73,7 @@ const MeteoPage = () => {
     } else if (isLocated) {
       initLocation();
     }
-  }, [isLocated]);
+  }, [isLocated, geoPosition]);
 
   useEffect(() => {
     const getMeteoPoint = async () => {
@@ -76,11 +82,19 @@ const MeteoPage = () => {
         location.geometry.coordinates[0],
       ]);
       setMeteoPointPosition(meteoPoint);
-      const address = await getAddressByCoordinates(
-        meteoPoint[0],
-        meteoPoint[1]
-      );
-      setMeteoPointAddress(address.properties.label);
+      if (meteoPoint) {
+        const address = await getAddressByCoordinates(
+          meteoPoint[0],
+          meteoPoint[1]
+        );
+        if (address) {
+          setMeteoPointAddress(address.properties.label);
+        } else {
+          setMeteoPointAddress("inconnu");
+        }
+      } else {
+        setMeteoPointAddress("");
+      }
     };
     if (location) {
       getMeteoPoint();
@@ -107,7 +121,29 @@ const MeteoPage = () => {
                 />
               </div>
               <h2>Point météo le plus proche : {meteoPointAddress}</h2>
-
+              <Button
+                className="show-map"
+                color="secondary"
+                variant="outlined"
+                size="small"
+                onClick={() => {
+                  setIsMapVisible(!isMapVisible);
+                }}
+              >
+                <p>{isMapVisible ? "Masquer la carte" : "Afficher la Carte"}</p>
+                {isMapVisible ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
+              </Button>
+              {isMapVisible && (
+                <div className="map">
+                  <Map
+                    mapCenter={[
+                      location.geometry.coordinates[1],
+                      location.geometry.coordinates[0],
+                    ]}
+                    meteoPoint={meteoPointPosition}
+                  />
+                </div>
+              )}
               <div className="meteo">
                 <MeteoGraphs position={meteoPointPosition} />
               </div>

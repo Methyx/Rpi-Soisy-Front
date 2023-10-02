@@ -71,8 +71,23 @@
   font-size: clamp(12px, 2vw, 18px);
   max-width: 1200px;
   margin: 0 auto;
-  font-weight: 600;
-  color: darkblue;
+  font-weight: 500;
+  color: rgb(83, 83, 83);
+}
+
+.meteo-page .show-map {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  margin-left: max(calc((100vw - 1200px) / 2), 15px);
+}
+.meteo-page .show-map p {
+  font-size: clamp(10px, 1.8vw, 15px);
+}
+
+.meteo-page .map {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 450px;
 }
 
 .meteo-page .meteo {
