@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import finger from "../assets/finger-pointing.png";
 
 // functions
-import getWindowSize from "../functions/getWindowSize";
+import useGetWindowSize from "../functions/useGetWindowSize";
 
 // style
 import "./header.css";
@@ -11,7 +11,7 @@ import "./header.css";
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const windowSize = getWindowSize();
+  const windowSize = useGetWindowSize();
 
   return (
     Boolean(location.pathname !== "/") && (
