@@ -22,6 +22,7 @@
 
 .back-home {
   display: none;
+  width: 200px;
 }
 
 .hands:hover .back-home {
@@ -31,7 +32,20 @@
   gap: 15px;
 }
 .back-home img {
-  height: 75px;
+  height: 70px;
+  animation: slide-left 0.8s infinite reverse;
+  animation-timing-function: ease-in-out cubic-bezier(0.1, -0.6, 0.2, 0);
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .🤚 {

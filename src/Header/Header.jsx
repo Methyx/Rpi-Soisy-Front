@@ -27,7 +27,7 @@ const Header = () => {
           </div>
           <div className="back-home">
             <img src={finger} alt="finger pointing" />
-            <p>retour</p>
+            <p>Home</p>
           </div>
         </div>
       </div>

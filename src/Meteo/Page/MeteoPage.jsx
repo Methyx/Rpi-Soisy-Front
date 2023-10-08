@@ -112,7 +112,7 @@ const MeteoPage = () => {
       ) : (
         <div className="meteo-page-content">
           {isReady && (
-            <>
+            <div className="meteo-container">
               <div className="location">
                 <InputAddress
                   initValue={location?.properties?.label}
@@ -147,7 +147,7 @@ const MeteoPage = () => {
               <div className="meteo">
                 <MeteoGraphs position={meteoPointPosition} />
               </div>
-            </>
+            </div>
           )}
         </div>
       )}

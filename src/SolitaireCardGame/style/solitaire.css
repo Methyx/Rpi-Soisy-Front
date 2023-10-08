@@ -3,7 +3,7 @@
 
   font-family: Poppins, sans-serif;
   /* background-color: #f1f1f1f1; */
-  min-height: max(100vh, calc(7 * var(--card-height)));
+  min-height: max(calc(100vh - 80px), calc(7 * var(--card-height)));
   max-width: 1200px;
   margin: 0 auto;
   /* background-image: repeating-linear-gradient(
