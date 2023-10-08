@@ -5,7 +5,7 @@
   /* background-color: #f1f1f1f1; */
   min-height: max(calc(100vh - 80px), calc(7 * var(--card-height)));
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0px auto;
   /* background-image: repeating-linear-gradient(
       135deg,
       rgba(0, 0, 0, 0.03) 0px,

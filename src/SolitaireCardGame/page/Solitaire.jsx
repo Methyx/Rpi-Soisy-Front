@@ -34,6 +34,7 @@ function Solitaire() {
           setGameWon: setGameWon,
         }}
       >
+        <br />
         <GameHeader />
         <GameZone />
       </GameContext.Provider>
