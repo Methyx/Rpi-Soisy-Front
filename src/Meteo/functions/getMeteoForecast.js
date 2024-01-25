@@ -1,72 +1,43 @@
 import axios from "axios";
 
-const getMeteoForecast = async (
-  meteoPointPosition, //  [lat, lng]  ex.: [49, 2.3]
-  nbPoints = 48
-) => {
-  // return the forecast from the meteo point as an array of nbPoints objects :
+const getMeteoForecast = async (position = [48.8630178, 2.323974]) => {
+  // return the forecast from the nearest meteo point as an array of nbPoints objects :
   //   [
   //     {
   //       position: [49, 2.3],
   //       forecast: "2023-04-03T07:00:00+00:00",
-  //       "2_metre_temperature": 4.547540000000026,
+  //       cloud_cover: 50,
   //       "2_metre_relative_humidity": 74.1651,
   //       "10m_wind_speed": 3.38676,
   //       total_precipitation: 0,
-  //       surface_solar_radiation_downwards: 487619.59375,
+  //       weather_code: 1,
   //     },
   //      {...},
   //   ];
   //
+
   try {
-    if (!meteoPointPosition || meteoPointPosition.length !== 2) {
-      return null;
-    }
-    // ask for the forecasts
-    const urlSource =
-      "https://public.opendatasoft.com/api/records/1.0/search/?dataset=arome-0025-sp1_sp2";
-    let url2 = urlSource + "&rows=" + nbPoints.toString();
-    url2 += "&sort=-forecast"; // sort by forcast ascending
-    url2 +=
-      "&geofilter.distance=" +
-      meteoPointPosition[0].toString() +
-      "," +
-      meteoPointPosition[1].toString();
-    const response2 = await axios.get(url2);
+    let url =
+      "https://api.open-meteo.com/v1/meteofrance?hourly=temperature_2m,precipitation,weather_code,cloud_cover,wind_speed_10m&timezone=Europe/Paris";
+    url += "&latitude=" + position[0];
+    url += "&longitude=" + position[1];
+    const response = await axios.get(url);
+    position = [response.data.latitude, response.data.longitude];
     const results = [];
-    if (response2.data.records) {
-      for (let i = 0; i < response2.data.records.length; i++) {
-        const dataItem = response2.data.records[i].fields;
-        results.push({
-          position: dataItem.position || null,
-          forecast: dataItem.forecast || null,
-          "2_metre_temperature": dataItem["2_metre_temperature"] || null,
-          "2_metre_relative_humidity":
-            dataItem["2_metre_relative_humidity"] || null,
-          "10m_wind_speed": dataItem["10m_wind_speed"] || null,
-          total_precipitation: dataItem.total_precipitation || 0,
-          surface_solar_radiation_downwards:
-            dataItem.surface_solar_radiation_downwards || null,
-        });
-        if (i > 0) {
-          results[i].precipitation = Math.max(
-            results[i].total_precipitation - results[i - 1].total_precipitation,
-            0
-          );
-        } else {
-          results[i].precipitation = results[i].total_precipitation;
-        }
-        Object.keys(results[i]).forEach((item) => {
-          if (item !== "forecast" && item !== "position") {
-            results[i][item] = Math.round(results[i][item] * 10) / 10;
-          }
-        });
-      }
-      return results;
-    } else {
-      return null;
+    for (let i = 0; i < response.data.hourly.time.length; i++) {
+      results.push({
+        position: position,
+        forecast: response.data.hourly.time[i],
+        "2_metre_temperature": response.data.hourly.temperature_2m[i],
+        cloud_cover: response.data.hourly.cloud_cover[i],
+        "10m_wind_speed": response.data.hourly.wind_speed_10m[i],
+        precipitation: response.data.hourly.precipitation[i],
+        weather_code: response.data.hourly.weather_code[i],
+      });
     }
+    return results;
   } catch (error) {
+    console.log(error.reason);
     return null;
   }
 };

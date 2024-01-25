@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
-import WaterIcon from "@mui/icons-material/Water";
+import CloudQueueIcon from "@mui/icons-material/CloudQueue";
 import UmbrellaIcon from "@mui/icons-material/Umbrella";
 import ThermostatIcon from "@mui/icons-material/Thermostat";
 import AirIcon from "@mui/icons-material/Air";
@@ -10,26 +10,10 @@ import { CircularProgress } from "@mui/material";
 // components
 import MeteoGraph from "./MeteoGraph";
 
-// functions
-import getMeteoForecast from "../functions/getMeteoForecast";
-
 // style
 import "../style/meteo-graphs.css";
 
-const MeteoGraphs = ({ position }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [meteoData, setMeteoData] = useState([]);
-
-  useEffect(() => {
-    const init = async () => {
-      setIsLoading(true);
-      const meteo = await getMeteoForecast(position, 48);
-      setMeteoData(meteo);
-      setIsLoading(false);
-    };
-    init();
-  }, [position]);
-
+const MeteoGraphs = ({ meteoData, isLoading }) => {
   return (
     <div className="meteo-graphs">
       {isLoading ? (
@@ -76,10 +60,10 @@ const MeteoGraphs = ({ position }) => {
               meteoData={meteoData}
               syncId={"meteo"}
               dataXKey={"forecast"}
-              dataYKey={"2_metre_relative_humidity"}
+              dataYKey={"cloud_cover"}
               unit={"%"}
-              titleIcon={<WaterIcon />}
-              title={"Humidité"}
+              titleIcon={<CloudQueueIcon />}
+              title={"Couvertue nuageuse"}
               color={"#80ced6"}
             />
           </section>

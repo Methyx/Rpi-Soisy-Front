@@ -25,7 +25,7 @@ const MeteoGraph = ({
   title,
   color,
 }) => {
-  const today = date.format(new Date(), "YYYY-MM-DDTHH") + ":00:00+00:00";
+  const today = date.format(new Date(), "YYYY-MM-DDTHH") + ":00";
   return (
     <ResponsiveContainer className="graph-container">
       <AreaChart

@@ -13,7 +13,7 @@ import Map from "../components/Map";
 // functions
 import getGeoLocation from "../functions/getGeoLocation";
 import getAddressByCoordinates from "../functions/getAddressByCoordinates";
-import getNearestMeteoPoint from "../functions/getNearestMeteoPoint";
+import getMeteoForecast from "../functions/getMeteoForecast";
 
 // Paris to init
 const paris = {
@@ -47,6 +47,8 @@ const MeteoPage = () => {
   const [location, setLocation] = useState(null);
   const [isLocated, setIsLocated] = useState(null);
   const [geoPosition, setGeoPosition] = useState([]);
+  const [meteoData, setMeteoData] = useState({});
+  const [isLoadingMeteoData, setIsLoadingMeteoData] = useState(true);
   const [meteoPointPosition, setMeteoPointPosition] = useState(null);
   const [meteoPointAddress, setMeteoPointAddress] = useState("");
   const [isReady, setIsReady] = useState(false);
@@ -76,16 +78,19 @@ const MeteoPage = () => {
   }, [isLocated, geoPosition]);
 
   useEffect(() => {
-    const getMeteoPoint = async () => {
-      const meteoPoint = await getNearestMeteoPoint([
+    const getMeteoData = async () => {
+      setIsLoadingMeteoData(true);
+      const meteo = await getMeteoForecast([
         location.geometry.coordinates[1],
         location.geometry.coordinates[0],
       ]);
-      setMeteoPointPosition(meteoPoint);
+      setMeteoData(meteo);
+      const meteoPoint = [meteo[0].position[1], meteo[0].position[0]];
+      setMeteoPointPosition([meteoPoint[1], meteoPoint[0]]);
       if (meteoPoint) {
         const address = await getAddressByCoordinates(
-          meteoPoint[0],
-          meteoPoint[1]
+          meteoPoint[1],
+          meteoPoint[0]
         );
         if (address) {
           setMeteoPointAddress(address.properties.label);
@@ -95,9 +100,10 @@ const MeteoPage = () => {
       } else {
         setMeteoPointAddress("");
       }
+      setIsLoadingMeteoData(false);
     };
     if (location) {
-      getMeteoPoint();
+      getMeteoData();
     }
   }, [location]);
 
@@ -145,7 +151,10 @@ const MeteoPage = () => {
                 </div>
               )}
               <div className="meteo">
-                <MeteoGraphs position={meteoPointPosition} />
+                <MeteoGraphs
+                  meteoData={meteoData}
+                  isLoading={isLoadingMeteoData}
+                />
               </div>
             </div>
           )}

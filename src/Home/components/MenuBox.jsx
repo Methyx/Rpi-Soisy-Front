@@ -32,7 +32,7 @@ const MenuBox = () => {
           </li>
           <li>
             <Link className="nav-link" to="/meteo">
-              Meteo 48h
+              Meteo horaire 4 jours
             </Link>
           </li>
         </ul>
