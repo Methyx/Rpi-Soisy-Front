@@ -51,7 +51,7 @@ const MeteoGraphs = ({ meteoData, isLoading }) => {
               syncId={"meteo"}
               dataXKey={"forecast"}
               dataYKey={"10m_wind_speed"}
-              unit={" m/s"}
+              unit={" km/h"}
               titleIcon={<AirIcon />}
               title={"Vent"}
               color={"#6B5B95"}
