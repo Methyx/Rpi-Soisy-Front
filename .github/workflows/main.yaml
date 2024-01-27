@@ -21,7 +21,7 @@ jobs:
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          username: methyx
+          username: phil
           server: methyx.ddns.net
           port: 11022
           ssh_private_key: ${{ secrets.RPI_METHYX_SSH }}
