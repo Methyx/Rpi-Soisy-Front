@@ -23,7 +23,7 @@ jobs:
         with:
           username: methyx
           server: methyx.ddns.net
-          port: 22
+          port: 11022
           ssh_private_key: ${{ secrets.RPI_METHYX_SSH }}
           local_path: ./build/*
           remote_path: /home/methyx/public_html/
