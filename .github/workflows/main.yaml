@@ -21,11 +21,10 @@ jobs:
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          username: phil
+          username: methyx
           server: methyx.ddns.net
           port: 22
           ssh_private_key: ${{ secrets.RPI_METHYX_SSH }}
-
           local_path: ./build/*
           remote_path: /home/methyx/public_html/
 
