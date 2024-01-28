@@ -1,32 +1,26 @@
-name: Methyx-Autodeploy
-
 on:
   push:
     branches: [main]
-
-  workflow_dispatch:
-
+name: 🚀 Deploy website on push
 jobs:
-  deploy-via-sftp:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
 
-      - name: Compile
+      - name: Add node_modules
         run: yarn install
       - name: Build
         run: yarn build
 
-      - name: SFTP Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.1
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          username: phil
-          server: methyx.ddns.net
-          port: 11022
-          ssh_private_key: ${{ secrets.RPI_METHYX_SSH }}
-          local_path: ./build/*
-          remote_path: /home/methyx/public_html/
-
-          # sftp args
-          args: "-o ConnectTimeout=5"
+          port: 21
+          server: methyx@ddns.net
+          username: git@methyx.ddns.net
+          password: ${{ secrets.git_ftp_password }}
+          local-dir: ./build/
+          server-dir: public_html/
