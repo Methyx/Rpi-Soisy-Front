@@ -22,5 +22,5 @@ jobs:
           server: methyx@ddns.net
           username: git@methyx.ddns.net
           password: ${{ secrets.git_ftp_password }}
-          local-dir: ./build/
+          local-dir: ./dist/
           server-dir: public_html/
