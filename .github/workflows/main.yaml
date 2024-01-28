@@ -19,7 +19,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           port: 21
-          server: methyx@ddns.net
+          server: methyx.ddns.net
           username: git@methyx.ddns.net
           password: ${{ secrets.git_ftp_password }}
           local-dir: ./dist/
