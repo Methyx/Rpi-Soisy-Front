@@ -20,7 +20,7 @@ jobs:
         with:
           port: 21
           server: methyx.ddns.net
-          username: git@methyx.ddns.net
+          username: git@methyx.fr
           password: ${{ secrets.git_ftp_password }}
           local-dir: ./dist/
           server-dir: ./
