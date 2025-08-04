@@ -30,7 +30,7 @@
   margin-top: 5px;
 }
 
-.astronomy .aladin-container {
+.astronomy .aladin-mycontainer {
   margin-top: 30px;
 }
 
@@ -46,8 +46,9 @@
 }
 
 .astronomy .aladin {
-  width: 100%;
-  height: 700px;
+  width: calc(100% - 40px);
+  margin: 10px auto;
+  height: min(700px, 80vh);
 }
 
 .astronomy .aladin .aladin-location {

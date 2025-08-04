@@ -110,7 +110,7 @@ const Astronomy = () => {
           plugins={[Captions, Fullscreen, Slideshow, Thumbnails, Zoom]}
         />
       </div>
-      <div className="aladin-container">
+      <div className="aladin-mycontainer">
         <h1>Aladin : le Google Earth du ciel</h1>
         <div className="actions">
           <TextField
