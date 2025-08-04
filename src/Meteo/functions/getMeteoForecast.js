@@ -25,15 +25,17 @@ const getMeteoForecast = async (position = [48.8630178, 2.323974]) => {
     position = [response.data.latitude, response.data.longitude];
     const results = [];
     for (let i = 0; i < response.data.hourly.time.length; i++) {
-      results.push({
-        position: position,
-        forecast: response.data.hourly.time[i],
-        "2_metre_temperature": response.data.hourly.temperature_2m[i],
-        cloud_cover: response.data.hourly.cloud_cover[i],
-        "10m_wind_speed": response.data.hourly.wind_speed_10m[i],
-        precipitation: response.data.hourly.precipitation[i],
-        weather_code: response.data.hourly.weather_code[i],
-      });
+      if (i < 72) {
+        results.push({
+          position: position,
+          forecast: response.data.hourly.time[i],
+          "2_metre_temperature": response.data.hourly.temperature_2m[i],
+          cloud_cover: response.data.hourly.cloud_cover[i],
+          "10m_wind_speed": response.data.hourly.wind_speed_10m[i],
+          precipitation: response.data.hourly.precipitation[i],
+          weather_code: response.data.hourly.weather_code[i],
+        });
+      }
     }
     return results;
   } catch (error) {
