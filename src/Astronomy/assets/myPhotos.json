@@ -1,0 +1,99 @@
+[
+  {
+    "name": "M51",
+    "surname": "Galaxie du Tourbillon",
+    "target": "M51",
+    "dist": "23,6 millions d'années lumière",
+    "photo": "m51.jpg",
+    "coordinates": [202.469575, 47.1952583]
+  },
+  {
+    "name": "M81 & M82",
+    "target": "M81",
+    "surname": "Galaxie de Bode & Galaxie du Cigare",
+    "dist": "12 millions d'années lumière",
+    "photo": "m82.jpg",
+    "coordinates": [148.888219, 69.0652951]
+  },
+
+  {
+    "name": "M101",
+    "surname": "Galaxie du Moulinet",
+    "target": "M101",
+    "dist": "21,7 millions d'années lumière",
+    "photo": "m101.jpg",
+    "coordinates": [210.802429, 54.34875]
+  },
+  {
+    "name": "NGC7000-sud",
+    "surname": "détail de la Nébuleuse de l'Amérique du Nord",
+    "target": "NGC7000",
+    "dist": "2 000 années lumière",
+    "photo": "ngc7000-sud.jpg",
+    "coordinates": [314.992908, 43.5899396]
+  },
+  {
+    "name": "NGC7000",
+    "surname": "Nébuleuse de l'Amérique du Nord",
+    "target": "NGC7000",
+    "dist": "2 000 années lumière",
+    "photo": "ngc7000.jpg",
+    "coordinates": [314.6958, 44.33]
+  },
+  {
+    "name": "M27",
+    "surname": "Nébuleuse de l'Haltère",
+    "target": "M27",
+    "dist": "1 250 années lumière",
+    "photo": "m27.jpg",
+    "coordinates": [299.901513, 22.7211978]
+  },
+  {
+    "name": "NGC6992",
+    "surname": "Nébuleuse des Dentelles du Cygne",
+    "target": "NGC6992",
+    "dist": "1 500 années lumière",
+    "photo": "ngc6992.jpg",
+    "coordinates": [314.0792, 31.7433]
+  },
+  {
+    "name": "NGC1245",
+    "surname": "Amas ouvert de Persée",
+    "target": "NGC1245",
+    "dist": "9 000 années lumière",
+    "photo": "ngc1245.jpg",
+    "coordinates": [48.6847, 47.2349]
+  },
+  {
+    "name": "M57",
+    "surname": "Nébuleuse de la Lyre",
+    "target": "M57",
+    "dist": "2 500 années lumière",
+    "photo": "m57.jpg",
+    "coordinates": [283.396237, 33.0291342]
+  },
+  {
+    "name": "NGC7789",
+    "surname": "La Rose de Caroline",
+    "target": "NGC7789",
+    "dist": "8 000 années lumière",
+    "photo": "ngc7789.jpg",
+    "coordinates": [359.3308, 56.7245]
+  },
+  {
+    "name": "NGC7023",
+    "surname": "Nébuleuse de l'Iris",
+    "target": "NGC7023",
+    "dist": "1 300 années lumière",
+    "photo": "ngc7023.jpg",
+    "coordinates": [315.40375, 68.16333]
+  },
+  {
+    "name": "M31",
+    "surname": "Galaxie d'Andromède",
+    "target": "M31",
+    "dist": "2,5 millions d'années lumière",
+    "photo": "m31.jpg",
+    "coordinates": [10.6847083, 41.26875]
+  }
+]

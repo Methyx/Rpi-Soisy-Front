@@ -9,6 +9,7 @@ import Home from "./Home/page/Home";
 import Solitaire from "./SolitaireCardGame/page/Solitaire";
 import FamilyRock from "./FamilyRock/page/FamilyRock";
 import MeteoPage from "./Meteo/Page/MeteoPage";
+import Astronomy from "./Astronomy/page/Astronomy";
 
 // style
 import "./App.css";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/solitaire" element={<Solitaire />} />
         <Route path="/familyrock" element={<FamilyRock />} />
         <Route path="/meteo" element={<MeteoPage />} />
+        <Route path="/astronomy" element={<Astronomy />} />
       </Routes>
     </Router>
   );

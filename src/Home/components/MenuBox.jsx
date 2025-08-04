@@ -21,6 +21,11 @@ const MenuBox = () => {
       <nav className={isMenuOpen ? "navigation open" : "navigation close"}>
         <ul className="nav-list">
           <li>
+            <Link className="nav-link" to="/astronomy">
+              Astronomie
+            </Link>
+          </li>
+          <li>
             <Link className="nav-link" to="/solitaire">
               Jeu de Cartes Solitaire
             </Link>

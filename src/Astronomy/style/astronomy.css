@@ -1,0 +1,67 @@
+.astronomy {
+  padding: 20px 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px);
+  color: white;
+}
+
+.astronomy h1 {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.astronomy .photos-album {
+  margin: 25px 0;
+}
+
+.astronomy .react-photo-album--image {
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
+    0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+}
+.astronomy .react-photo-album--image:hover {
+  border: 2px solid rgb(192, 192, 192);
+}
+
+.astronomy .photo-title {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.astronomy .aladin-container {
+  margin-top: 30px;
+}
+
+.astronomy .actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.astronomy .legend {
+  display: flex;
+  gap: 10px;
+}
+
+.astronomy .aladin {
+  width: 100%;
+  height: 700px;
+}
+
+.astronomy .aladin .aladin-location {
+  /* display: none; */
+}
+
+.astronomy .MuiTextField-root {
+  background-color: aliceblue;
+  color: blue;
+  border-radius: 5px;
+}
+
+.astronomy .MuiInputLabel-root {
+  background-color: aliceblue;
+  padding: 0 10px;
+  border-radius: 2px;
+}
