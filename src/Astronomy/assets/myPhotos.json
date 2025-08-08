@@ -95,5 +95,13 @@
     "dist": "2,5 millions d'années lumière",
     "photo": "m31.jpg",
     "coordinates": [10.6847083, 41.26875]
+  },
+  {
+    "name": "NGC281",
+    "surname": "Nébuleuse Pacman",
+    "target": "NGC281",
+    "dist": "10 000 années lumière",
+    "photo": "ngc281.jpg",
+    "coordinates": [13.1045833, 56.565]
   }
 ]
