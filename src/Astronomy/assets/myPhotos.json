@@ -56,30 +56,7 @@
     "photo": "ngc6992.jpg",
     "coordinates": [314.0792, 31.7433]
   },
-  {
-    "name": "NGC1245",
-    "surname": "Amas ouvert de Persée",
-    "target": "NGC1245",
-    "dist": "9 000 années lumière",
-    "photo": "ngc1245.jpg",
-    "coordinates": [48.6847, 47.2349]
-  },
-  {
-    "name": "M57",
-    "surname": "Nébuleuse de la Lyre",
-    "target": "M57",
-    "dist": "2 500 années lumière",
-    "photo": "m57.jpg",
-    "coordinates": [283.396237, 33.0291342]
-  },
-  {
-    "name": "NGC7789",
-    "surname": "La Rose de Caroline",
-    "target": "NGC7789",
-    "dist": "8 000 années lumière",
-    "photo": "ngc7789.jpg",
-    "coordinates": [359.3308, 56.7245]
-  },
+
   {
     "name": "NGC7023",
     "surname": "Nébuleuse de l'Iris",
