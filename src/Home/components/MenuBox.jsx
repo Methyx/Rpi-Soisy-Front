@@ -41,7 +41,7 @@ const MenuBox = () => {
             </Link>
           </li>
           <li>
-            <Link className="nav-link" to="/webmail">
+            <Link className="nav-link" to="https://methyx.fr/webmail">
               Webmail
             </Link>
           </li>

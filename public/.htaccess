@@ -1,5 +1,10 @@
 RewriteEngine On
-RewriteBase /
+RewriteBase/
+
+# Exception pour webmail : ne pas rediriger vers index.html
+RewriteRule ^webmail($|/) - [L]
+
+# Règles pour React Router
 RewriteRule ^index.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
