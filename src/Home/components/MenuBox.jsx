@@ -40,6 +40,11 @@ const MenuBox = () => {
               Meteo horaire 4 jours
             </Link>
           </li>
+          <li>
+            <Link className="nav-link" to="/webmail">
+              Webmail
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
