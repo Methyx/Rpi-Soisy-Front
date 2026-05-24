@@ -80,5 +80,21 @@
     "dist": "10 000 années lumière",
     "photo": "ngc281.jpg",
     "coordinates": [13.1045833, 56.565]
+  },
+  {
+    "name": "M106",
+    "surname": "",
+    "target": "M106",
+    "dist": "25 milions d'années lumière",
+    "photo": "m106.jpg",
+    "coordinates": [184.740083, 47.3037194]
+  },
+  {
+    "name": "M108 & M97",
+    "surname": "Galaxie de la planche de surf & Nébuleuse du Hibou",
+    "target": "M108",
+    "dist": "32 millions d'années lumière",
+    "photo": "m108.jpg",
+    "coordinates": [167.879029, 55.6741222]
   }
 ]
