@@ -95,7 +95,7 @@ const MeteoPage = () => {
         meteo[0].data[0].position[0],
       ];
       setSelectedDay({ index: 0, day: meteo[0].day });
-      setDataForGraph(meteoData[0]?.data || []);
+      setDataForGraph(meteo[0]?.data || []);
       setMeteoPointPosition([meteoPoint[1], meteoPoint[0]]);
       if (meteoPoint) {
         const address = await getAddressByCoordinates(
