@@ -3,7 +3,8 @@
   max-width: 1200px;
   margin: 0 auto;
   min-height: calc(100vh - 80px);
-  background-image: repeating-linear-gradient(
+  background-image:
+    repeating-linear-gradient(
       135deg,
       rgba(240, 240, 240, 0.02) 0px,
       rgba(240, 240, 240, 0.02) 21px,
@@ -93,6 +94,43 @@
   height: 450px;
 }
 
+.meteo-page .header {
+  display: flex;
+  background-color: transparent;
+}
+
+.meteo-page .daily-header {
+  box-sizing: border-box;
+  width: 120px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 25px 0;
+  color: var(--main-color5);
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #e8f2f1;
+  border: 1px solid white;
+  border-bottom: 2px solid lightgray;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+}
+
+.meteo-page .daily-header.white {
+  background-color: white;
+  border: 2px solid lightgray;
+  border-bottom: none;
+  color: var(--main-color6);
+}
+
+.meteo-page .daily-header .day {
+  font-weight: 300;
+}
+
 .meteo-page .meteo {
-  margin-top: 10px;
+  margin-top: -7px;
+  border: 2px solid lightgray;
 }

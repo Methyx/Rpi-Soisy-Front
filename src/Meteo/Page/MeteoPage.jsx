@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import date from "date-and-time";
+import fr from "date-and-time/locale/fr";
+
 import { Button } from "@mui/material";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -47,12 +50,14 @@ const MeteoPage = () => {
   const [location, setLocation] = useState(null);
   const [isLocated, setIsLocated] = useState(null);
   const [geoPosition, setGeoPosition] = useState([]);
-  const [meteoData, setMeteoData] = useState({});
+  const [meteoData, setMeteoData] = useState([]);
   const [isLoadingMeteoData, setIsLoadingMeteoData] = useState(true);
   const [meteoPointPosition, setMeteoPointPosition] = useState(null);
   const [meteoPointAddress, setMeteoPointAddress] = useState("");
   const [isReady, setIsReady] = useState(false);
   const [isMapVisible, setIsMapVisible] = useState(false);
+  const [selectedDay, setSelectedDay] = useState("");
+  const [dataForGraph, setDataForGraph] = useState([]);
 
   useEffect(() => {
     getGeoLocation(setIsLocated, setGeoPosition);
@@ -62,7 +67,7 @@ const MeteoPage = () => {
     const initLocation = async () => {
       const geoLocation = await getAddressByCoordinates(
         geoPosition.lat,
-        geoPosition.lng
+        geoPosition.lng,
       );
       if (geoLocation) {
         setLocation(geoLocation);
@@ -85,12 +90,17 @@ const MeteoPage = () => {
         location.geometry.coordinates[0],
       ]);
       setMeteoData(meteo);
-      const meteoPoint = [meteo[0].position[1], meteo[0].position[0]];
+      const meteoPoint = [
+        meteo[0].data[0].position[1],
+        meteo[0].data[0].position[0],
+      ];
+      setSelectedDay({ index: 0, day: meteo[0].day });
+      setDataForGraph(meteoData[0]?.data || []);
       setMeteoPointPosition([meteoPoint[1], meteoPoint[0]]);
       if (meteoPoint) {
         const address = await getAddressByCoordinates(
           meteoPoint[1],
-          meteoPoint[0]
+          meteoPoint[0],
         );
         if (address) {
           setMeteoPointAddress(address.properties.label);
@@ -106,6 +116,8 @@ const MeteoPage = () => {
       getMeteoData();
     }
   }, [location]);
+
+  console.log(meteoData);
 
   return (
     <div className="meteo-page">
@@ -150,9 +162,33 @@ const MeteoPage = () => {
                   />
                 </div>
               )}
+              <div className="header">
+                {meteoData?.map((item, index) => {
+                  return (
+                    <div
+                      className={
+                        selectedDay?.index === index
+                          ? "daily-header white"
+                          : "daily-header"
+                      }
+                      key={index}
+                      onClick={() => {
+                        setSelectedDay({ index: index, day: item.day });
+                        setDataForGraph(meteoData[index]?.data || []);
+                      }}
+                    >
+                      <p className="day">
+                        {date.transform(item.day, "YYYY-MM-DD", "ddd D", {
+                          locale: fr,
+                        })}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
               <div className="meteo">
                 <MeteoGraphs
-                  meteoData={meteoData}
+                  meteoData={dataForGraph}
                   isLoading={isLoadingMeteoData}
                 />
               </div>

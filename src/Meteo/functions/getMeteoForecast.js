@@ -24,9 +24,17 @@ const getMeteoForecast = async (position = [48.8630178, 2.323974]) => {
     const response = await axios.get(url);
     position = [response.data.latitude, response.data.longitude];
     const results = [];
+    let currentDay = null;
+    let indexDay = -1;
     for (let i = 0; i < response.data.hourly.time.length; i++) {
-      if (i < 72) {
-        results.push({
+      if (response.data.hourly.temperature_2m[i] !== null) {
+        const dataDay = response.data.hourly.time[i].slice(0, 10);
+        if (dataDay !== currentDay) {
+          results.push({ day: dataDay, data: [] });
+          indexDay = indexDay + 1;
+          currentDay = dataDay;
+        }
+        results[indexDay].data.push({
           position: position,
           forecast: response.data.hourly.time[i],
           "2_metre_temperature": response.data.hourly.temperature_2m[i],
@@ -35,6 +43,8 @@ const getMeteoForecast = async (position = [48.8630178, 2.323974]) => {
           precipitation: response.data.hourly.precipitation[i],
           weather_code: response.data.hourly.weather_code[i],
         });
+      } else {
+        break;
       }
     }
     return results;
