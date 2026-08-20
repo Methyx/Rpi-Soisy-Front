@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import date from "date-and-time";
 import fr from "date-and-time/locale/fr";
+date.locale(fr);
 
 import { Button } from "@mui/material";
 
@@ -117,8 +118,6 @@ const MeteoPage = () => {
     }
   }, [location]);
 
-  console.log(meteoData);
-
   return (
     <div className="meteo-page">
       <h1>La météo de précision de Météo France</h1>
@@ -178,9 +177,7 @@ const MeteoPage = () => {
                       }}
                     >
                       <p className="day">
-                        {date.transform(item.day, "YYYY-MM-DD", "ddd D", {
-                          locale: fr,
-                        })}
+                        {date.transform(item.day, "YYYY-MM-DD", "ddd D")}
                       </p>
                     </div>
                   );
