@@ -16,7 +16,6 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 
 import { Button, TextField, Box } from "@mui/material";
-import PanoramaFishEyeIcon from "@mui/icons-material/PanoramaFishEye";
 
 import myPhotos from "../assets/myPhotos.json";
 
@@ -67,7 +66,7 @@ const Astronomy = () => {
           <RowsPhotoAlbum
             photos={myPhotos.map((item) => {
               return {
-                src: "./assets/astrophotos/" + item.photo,
+                src: "./assets/astrophotosv2/" + item.photo,
                 alt: item.surname,
                 title: item.name,
                 label: item.surname,
@@ -98,7 +97,7 @@ const Astronomy = () => {
         <Lightbox
           slides={myPhotos.map((item) => {
             return {
-              src: "./assets/astrophotos/" + item.photo,
+              src: "./assets/astrophotosv2/" + item.photo,
               title: item.name,
               description: item.surname + "\n" + item.dist,
             };
