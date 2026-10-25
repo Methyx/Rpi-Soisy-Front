@@ -25,20 +25,20 @@
     "coordinates": [210.802429, 54.34875]
   },
   {
-    "name": "NGC7000-sud",
-    "surname": "détail de la Nébuleuse de l'Amérique du Nord",
-    "target": "NGC7000",
-    "dist": "2 000 années lumière",
-    "photo": "ngc7000-sud.jpg",
-    "coordinates": [314.992908, 43.5899396]
-  },
-  {
     "name": "NGC7000",
     "surname": "Nébuleuse de l'Amérique du Nord",
     "target": "NGC7000",
     "dist": "2 000 années lumière",
     "photo": "ngc7000.jpg",
     "coordinates": [314.6958, 44.33]
+  },
+  {
+    "name": "NGC7000-sud",
+    "surname": "détail de la Nébuleuse de l'Amérique du Nord",
+    "target": "NGC7000",
+    "dist": "2 000 années lumière",
+    "photo": "ngc7000-sud.jpg",
+    "coordinates": [314.992908, 43.5899396]
   },
   {
     "name": "M27",
@@ -96,5 +96,37 @@
     "dist": "32 millions d'années lumière",
     "photo": "m108.jpg",
     "coordinates": [167.879029, 55.6741222]
+  },
+  {
+    "name": "IC5070",
+    "surname": "Nébuleuse du Pélican",
+    "target": "IC5070",
+    "dist": "2 000 années lumière",
+    "photo": "ic5070.jpg",
+    "coordinates": [312.75, 44.3666667]
+  },
+  {
+    "name": "M57",
+    "surname": "Nébuleuse de l'Anneau",
+    "target": "M57",
+    "dist": "2 300 années lumière",
+    "photo": "m57.jpg",
+    "coordinates": [283.396237, 33.0291343]
+  },
+  {
+    "name": "M63",
+    "surname": "Galaxie du Tournesol",
+    "target": "M63",
+    "dist": "25 millions d'années lumière",
+    "photo": "m63.jpg",
+    "coordinates": [198.955309, 42.0293689]
+  },
+  {
+    "name": "NGC6888",
+    "surname": "Nébuleuse du croissant",
+    "target": "NGC6888",
+    "dist": "5 000 années lumière",
+    "photo": "ngc6888.jpg",
+    "coordinates": [303.027258, 38.3549401]
   }
 ]
