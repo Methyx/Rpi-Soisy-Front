@@ -91,7 +91,20 @@ const Astronomy = () => {
             }}
             render={{
               extras: (_, { index }) => {
-                return <p className="photo-title">{myPhotos[index].name}</p>;
+                return (
+                  <p className="photo-title">
+                    <span className="photo-title-line">
+                      {myPhotos[index].surname +
+                        " (" +
+                        myPhotos[index].name +
+                        ")"}
+                    </span>
+                    <span className="photo-title-line">
+                      {myPhotos[index].stackingCount?.toLocaleString() +
+                        " poses"}
+                    </span>
+                  </p>
+                );
               },
             }}
           />
