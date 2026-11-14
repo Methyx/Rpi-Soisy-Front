@@ -5,7 +5,8 @@
     "target": "M51",
     "dist": "23,6 millions d'années lumière",
     "photo": "m51.jpg",
-    "coordinates": [202.469575, 47.1952583]
+    "coordinates": [202.469575, 47.1952583],
+    "stackingCount": 2520
   },
   {
     "name": "M81 & M82",
@@ -13,7 +14,8 @@
     "surname": "Galaxie de Bode & Galaxie du Cigare",
     "dist": "12 millions d'années lumière",
     "photo": "m82.jpg",
-    "coordinates": [148.888219, 69.0652951]
+    "coordinates": [148.888219, 69.0652951],
+    "stackingCount": 1040
   },
 
   {
@@ -22,7 +24,8 @@
     "target": "M101",
     "dist": "21,7 millions d'années lumière",
     "photo": "m101.jpg",
-    "coordinates": [210.802429, 54.34875]
+    "coordinates": [210.802429, 54.34875],
+    "stackingCount": 1112
   },
   {
     "name": "NGC7000",
@@ -30,7 +33,8 @@
     "target": "NGC7000",
     "dist": "2 000 années lumière",
     "photo": "ngc7000.jpg",
-    "coordinates": [314.6958, 44.33]
+    "coordinates": [314.6958, 44.33],
+    "stackingCount": 984
   },
   {
     "name": "NGC7000-sud",
@@ -38,7 +42,8 @@
     "target": "NGC7000",
     "dist": "2 000 années lumière",
     "photo": "ngc7000-sud.jpg",
-    "coordinates": [314.992908, 43.5899396]
+    "coordinates": [314.992908, 43.5899396],
+    "stackingCount": 2757
   },
   {
     "name": "M27",
@@ -46,7 +51,8 @@
     "target": "M27",
     "dist": "1 250 années lumière",
     "photo": "m27.jpg",
-    "coordinates": [299.901513, 22.7211978]
+    "coordinates": [299.901513, 22.7211978],
+    "stackingCount": 768
   },
   {
     "name": "NGC6992",
@@ -54,7 +60,8 @@
     "target": "NGC6992",
     "dist": "1 500 années lumière",
     "photo": "ngc6992.jpg",
-    "coordinates": [314.0792, 31.7433]
+    "coordinates": [314.0792, 31.7433],
+    "stackingCount": 918
   },
 
   {
@@ -63,7 +70,8 @@
     "target": "NGC7023",
     "dist": "1 300 années lumière",
     "photo": "ngc7023.jpg",
-    "coordinates": [315.40375, 68.16333]
+    "coordinates": [315.40375, 68.16333],
+    "stackingCount": 1426
   },
   {
     "name": "M31",
@@ -71,7 +79,8 @@
     "target": "M31",
     "dist": "2,5 millions d'années lumière",
     "photo": "m31.jpg",
-    "coordinates": [10.6847083, 41.26875]
+    "coordinates": [10.6847083, 41.26875],
+    "stackingCount": 2728
   },
   {
     "name": "NGC281",
@@ -79,7 +88,8 @@
     "target": "NGC281",
     "dist": "10 000 années lumière",
     "photo": "ngc281.jpg",
-    "coordinates": [13.1045833, 56.565]
+    "coordinates": [13.1045833, 56.565],
+    "stackingCount": 1394
   },
   {
     "name": "M106",
@@ -87,7 +97,8 @@
     "target": "M106",
     "dist": "25 milions d'années lumière",
     "photo": "m106.jpg",
-    "coordinates": [184.740083, 47.3037194]
+    "coordinates": [184.740083, 47.3037194],
+    "stackingCount": 1150
   },
   {
     "name": "M108 & M97",
@@ -95,7 +106,8 @@
     "target": "M108",
     "dist": "32 millions d'années lumière",
     "photo": "m108.jpg",
-    "coordinates": [167.879029, 55.6741222]
+    "coordinates": [167.879029, 55.6741222],
+    "stackingCount": 1126
   },
   {
     "name": "IC5070",
@@ -103,7 +115,8 @@
     "target": "IC5070",
     "dist": "2 000 années lumière",
     "photo": "ic5070.jpg",
-    "coordinates": [312.75, 44.3666667]
+    "coordinates": [312.75, 44.3666667],
+    "stackingCount": 682
   },
   {
     "name": "M57",
@@ -111,7 +124,8 @@
     "target": "M57",
     "dist": "2 300 années lumière",
     "photo": "m57.jpg",
-    "coordinates": [283.396237, 33.0291343]
+    "coordinates": [283.396237, 33.0291343],
+    "stackingCount": 231
   },
   {
     "name": "M63",
@@ -119,7 +133,8 @@
     "target": "M63",
     "dist": "25 millions d'années lumière",
     "photo": "m63.jpg",
-    "coordinates": [198.955309, 42.0293689]
+    "coordinates": [198.955309, 42.0293689],
+    "stackingCount": 2355
   },
   {
     "name": "NGC6888",
@@ -127,6 +142,16 @@
     "target": "NGC6888",
     "dist": "5 000 années lumière",
     "photo": "ngc6888.jpg",
-    "coordinates": [303.027258, 38.3549401]
+    "coordinates": [303.027258, 38.3549401],
+    "stackingCount": 759
+  },
+  {
+    "name": "M33",
+    "surname": "Galaxie du Triangle",
+    "target": "M33",
+    "dist": "2,7 millions d'années lumière",
+    "photo": "m33.jpg",
+    "coordinates": [23.4620691, 30.6601751],
+    "stackingCount": 2276
   }
 ]

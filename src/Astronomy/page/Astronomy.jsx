@@ -35,7 +35,8 @@ const Astronomy = () => {
   useEffect(() => {
     A.init.then(() => {
       const aladinInit = A.aladin("#aladin-lite-div", {
-        survey: "P/DSS2/color",
+        // miroir ESAC : le serveur maître alasky.cds.unistra.fr/DSS renvoie 404
+        survey: "https://skies.esac.esa.int/DSSColor",
         cooFrame: "ICRSd",
         showCooGrid: false,
         showCooGridControl: false,
@@ -118,17 +119,12 @@ const Astronomy = () => {
             size="small"
             onChange={(event) => {
               setTarget(event.target.value);
-              let found = true;
-              A.catalogFromSimbad(event.target.value, 0.1, () => {
-                found = false;
+              aladin.gotoObject(event.target.value, {
+                success: () => {
+                  aladin.setFov(80);
+                },
+                error: () => {},
               });
-              if (found) {
-                aladin.gotoObject(event.target.value, {
-                  success: () => {
-                    aladin.setFov(80);
-                  },
-                });
-              }
             }}
           />
           <Button
