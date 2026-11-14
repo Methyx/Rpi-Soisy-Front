@@ -129,6 +129,8 @@ const Astronomy = () => {
           plugins={[Captions, Fullscreen, Slideshow, Thumbnails, Zoom]}
           // photo sur toute la surface disponible (pas de marge autour)
           carousel={{ padding: 0, spacing: 0 }}
+          // sur mobile : passe en plein écran dès l'ouverture (masque la barre du navigateur ; sans effet sur iPhone)
+          fullscreen={{ auto: isMobile }}
           // sur mobile : légendes et miniatures masquées par défaut (boutons pour les afficher)
           thumbnails={{ hidden: isMobile, showToggle: true }}
           captions={{ hidden: isMobile, showToggle: true }}
