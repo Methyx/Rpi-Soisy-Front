@@ -100,7 +100,12 @@ const Astronomy = () => {
             return {
               src: "./assets/astrophotosv2/" + item.photo,
               title: item.name,
-              description: item.surname + "\n" + item.dist,
+              description:
+                item.surname +
+                "\n" +
+                item.dist +
+                "\n" +
+                `(${item.stackingCount} poses)`,
             };
           })}
           open={indexPhoto >= 0}
