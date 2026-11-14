@@ -39,7 +39,7 @@ const createPhotosCatalog = (aladinInit, setTarget) => {
     );
   }
 
-  return newAladinInit;
+  return { aladin: newAladinInit, photosCatalog };
 };
 
 export default createPhotosCatalog;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import A from "aladin-lite";
 
 import { RowsPhotoAlbum } from "react-photo-album";
@@ -15,7 +15,7 @@ import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 
-import { Button, TextField, Box } from "@mui/material";
+import { Button, TextField, Box, Checkbox } from "@mui/material";
 
 import myPhotos from "../assets/myPhotos.json";
 
@@ -29,8 +29,10 @@ import { PanoramaFishEye } from "@mui/icons-material";
 
 const Astronomy = () => {
   const [aladin, setAladin] = useState();
-  const [target, setTarget] = useState("Polaris");
+  const [target, setTarget] = useState("NGC7023");
   const [indexPhoto, setIndexPhoto] = useState(-1);
+  const [showPhotos, setShowPhotos] = useState(true);
+  const photosCatalogRef = useRef();
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
   useEffect(() => {
@@ -54,7 +56,11 @@ const Astronomy = () => {
       });
 
       const newAladinInit = createConstellationsCatalog(aladinInit);
-      const newAladinInit2 = createPhotosCatalog(newAladinInit, setTarget);
+      const { aladin: newAladinInit2, photosCatalog } = createPhotosCatalog(
+        newAladinInit,
+        setTarget,
+      );
+      photosCatalogRef.current = photosCatalog;
 
       setAladin(newAladinInit2);
     });
@@ -165,6 +171,20 @@ const Astronomy = () => {
         </div>
         <br />
         <p className="legend">
+          <Checkbox
+            size="small"
+            checked={showPhotos}
+            sx={{
+              p: 0,
+              color: "blue",
+              "&.Mui-checked": { color: "primary.main" },
+            }}
+            onChange={(event) => {
+              setShowPhotos(event.target.checked);
+              if (event.target.checked) photosCatalogRef.current?.show();
+              else photosCatalogRef.current?.hide();
+            }}
+          />
           <span className="red-circle">
             <PanoramaFishEye color="error" fontSize="14px" />
           </span>
