@@ -31,6 +31,7 @@ const Astronomy = () => {
   const [aladin, setAladin] = useState();
   const [target, setTarget] = useState("Polaris");
   const [indexPhoto, setIndexPhoto] = useState(-1);
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
   useEffect(() => {
     A.init.then(() => {
@@ -76,7 +77,7 @@ const Astronomy = () => {
               };
             })}
             targetRowHeight={200}
-            rowConstraints={{ maxPhotos: 4 }}
+            rowConstraints={{ maxPhotos: 2 }}
             spacing={10}
             padding={10}
             onClick={({ index }) => {
@@ -113,6 +114,11 @@ const Astronomy = () => {
           close={() => setIndexPhoto(-1)}
           // enable optional lightbox plugins
           plugins={[Captions, Fullscreen, Slideshow, Thumbnails, Zoom]}
+          // photo sur toute la surface disponible (pas de marge autour)
+          carousel={{ padding: 0, spacing: 0 }}
+          // sur mobile : légendes et miniatures masquées par défaut (boutons pour les afficher)
+          thumbnails={{ hidden: isMobile, showToggle: true }}
+          captions={{ hidden: isMobile, showToggle: true }}
         />
       </div>
       <div className="aladin-mycontainer">
