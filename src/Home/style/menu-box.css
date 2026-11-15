@@ -79,7 +79,7 @@
   list-style-type: none;
   text-align: center;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(46, 96, 55, 0.8);
   border-radius: 5px;
 }
 
@@ -88,7 +88,8 @@
   margin: 20px 0;
   font-size: clamp(12px, 1.5vw, 25px);
   font-weight: 300;
-  color: #fff;
+  /* color: #fff; */
+  color: blanchedalmond;
   text-decoration: none;
   text-transform: uppercase;
 }

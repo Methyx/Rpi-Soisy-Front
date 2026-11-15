@@ -1,10 +1,11 @@
 .home-page {
   height: 100vh;
   width: 100vw;
-  background-image: url(../../assets/computer.jpg);
+  /* background-image: url(../../assets/computer.jpg); */
+  background-image: url(../../assets/lapinBlanc.jpg);
   background-color: black;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   color: azure;
 }
